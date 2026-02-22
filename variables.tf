@@ -43,6 +43,46 @@ variable "login_position" {
   }
 }
 
+variable "form_vertical_position" {
+  description = "Login form vertical position: TOP, CENTER, or BOTTOM (only works when enable_managed_login_branding is true)"
+  type        = string
+  default     = "CENTER"
+  
+  validation {
+    condition     = contains(["TOP", "CENTER", "BOTTOM"], var.form_vertical_position)
+    error_message = "Form vertical position must be one of: TOP, CENTER, BOTTOM"
+  }
+}
+
+variable "primary_color" {
+  description = "Primary branding color (6-digit hex without #, e.g. 0972d3). Applied to buttons and links."
+  type        = string
+  default     = "0972d3"
+}
+
+variable "primary_color_hover" {
+  description = "Hover state color for primary elements (6-digit hex without #). Default 033160 is a darker blue."
+  type        = string
+  default     = "033160"
+}
+
+variable "form_border_radius" {
+  description = "Border radius for form container and inputs (pixels)"
+  type        = number
+  default     = 8
+}
+
+variable "color_scheme_mode" {
+  description = "Display mode: LIGHT, DARK, or ADAPTIVE (follows browser preference)"
+  type        = string
+  default     = "LIGHT"
+  
+  validation {
+    condition     = contains(["LIGHT", "DARK", "ADAPTIVE"], var.color_scheme_mode)
+    error_message = "Color scheme mode must be one of: LIGHT, DARK, ADAPTIVE"
+  }
+}
+
 variable "background_asset_path" {
   description = "Path to background image asset relative to workspace root (supported: png, jpg, jpeg, svg)"
   type        = string

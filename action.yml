@@ -33,6 +33,26 @@ inputs:
     description: "Login form horizontal position: START, CENTER, or END (only works when enable_managed_login_branding is true)"
     required: false
     default: "CENTER"
+  form_vertical_position:
+    description: "Login form vertical position: TOP, CENTER, or BOTTOM (only works when enable_managed_login_branding is true)"
+    required: false
+    default: "CENTER"
+  primary_color:
+    description: "Primary branding color (6-digit hex without #, e.g. 0972d3). Applied to buttons and links."
+    required: false
+    default: "0972d3"
+  primary_color_hover:
+    description: "Hover state color for primary elements (6-digit hex without #)"
+    required: false
+    default: "033160"
+  form_border_radius:
+    description: "Border radius for form container and inputs (pixels)"
+    required: false
+    default: "8"
+  color_scheme_mode:
+    description: "Display mode: LIGHT, DARK, or ADAPTIVE (follows browser preference)"
+    required: false
+    default: "LIGHT"
   idp:
     description: 'List of identity providers to enable (e.g., "google", "cognito", or "google\ncognito")'
     required: false
@@ -147,6 +167,11 @@ runs:
         TF_VAR_logout_urls: ${{ inputs.logout_urls }}
         TF_VAR_enable_managed_login_branding: ${{ inputs.enable_managed_login_branding }}
         TF_VAR_login_position: ${{ inputs.login_position }}
+        TF_VAR_form_vertical_position: ${{ inputs.form_vertical_position }}
+        TF_VAR_primary_color: ${{ inputs.primary_color }}
+        TF_VAR_primary_color_hover: ${{ inputs.primary_color_hover }}
+        TF_VAR_form_border_radius: ${{ inputs.form_border_radius }}
+        TF_VAR_color_scheme_mode: ${{ inputs.color_scheme_mode }}
         TF_VAR_idp: ${{ inputs.idp }}
         TF_VAR_self_registration: ${{ inputs.self_registration }}
         TF_VAR_allowed_domains: ${{ inputs.allowed_domains }}
@@ -170,6 +195,11 @@ runs:
         TF_VAR_logout_urls: ${{ inputs.logout_urls }}
         TF_VAR_enable_managed_login_branding: ${{ inputs.enable_managed_login_branding }}
         TF_VAR_login_position: ${{ inputs.login_position }}
+        TF_VAR_form_vertical_position: ${{ inputs.form_vertical_position }}
+        TF_VAR_primary_color: ${{ inputs.primary_color }}
+        TF_VAR_primary_color_hover: ${{ inputs.primary_color_hover }}
+        TF_VAR_form_border_radius: ${{ inputs.form_border_radius }}
+        TF_VAR_color_scheme_mode: ${{ inputs.color_scheme_mode }}
         TF_VAR_idp: ${{ inputs.idp }}
         TF_VAR_self_registration: ${{ inputs.self_registration }}
         TF_VAR_allowed_domains: ${{ inputs.allowed_domains }}
@@ -203,6 +233,11 @@ runs:
         TF_VAR_logout_urls: ${{ inputs.logout_urls }}
         TF_VAR_enable_managed_login_branding: ${{ inputs.enable_managed_login_branding }}
         TF_VAR_login_position: ${{ inputs.login_position }}
+        TF_VAR_form_vertical_position: ${{ inputs.form_vertical_position }}
+        TF_VAR_primary_color: ${{ inputs.primary_color }}
+        TF_VAR_primary_color_hover: ${{ inputs.primary_color_hover }}
+        TF_VAR_form_border_radius: ${{ inputs.form_border_radius }}
+        TF_VAR_color_scheme_mode: ${{ inputs.color_scheme_mode }}
         TF_VAR_idp: ${{ inputs.idp }}
         TF_VAR_self_registration: ${{ inputs.self_registration }}
         TF_VAR_allowed_domains: ${{ inputs.allowed_domains }}
@@ -384,6 +419,11 @@ runs:
         TF_VAR_logout_urls: ${{ inputs.logout_urls }}
         TF_VAR_enable_managed_login_branding: ${{ inputs.enable_managed_login_branding }}
         TF_VAR_login_position: ${{ inputs.login_position }}
+        TF_VAR_form_vertical_position: ${{ inputs.form_vertical_position }}
+        TF_VAR_primary_color: ${{ inputs.primary_color }}
+        TF_VAR_primary_color_hover: ${{ inputs.primary_color_hover }}
+        TF_VAR_form_border_radius: ${{ inputs.form_border_radius }}
+        TF_VAR_color_scheme_mode: ${{ inputs.color_scheme_mode }}
         TF_VAR_idp: ${{ inputs.idp }}
         TF_VAR_self_registration: ${{ inputs.self_registration }}
         TF_VAR_allowed_domains: ${{ inputs.allowed_domains }}
@@ -459,6 +499,11 @@ runs:
         TF_VAR_logout_urls: ${{ inputs.logout_urls }}
         TF_VAR_enable_managed_login_branding: ${{ inputs.enable_managed_login_branding }}
         TF_VAR_login_position: ${{ inputs.login_position }}
+        TF_VAR_form_vertical_position: ${{ inputs.form_vertical_position }}
+        TF_VAR_primary_color: ${{ inputs.primary_color }}
+        TF_VAR_primary_color_hover: ${{ inputs.primary_color_hover }}
+        TF_VAR_form_border_radius: ${{ inputs.form_border_radius }}
+        TF_VAR_color_scheme_mode: ${{ inputs.color_scheme_mode }}
         TF_VAR_idp: ${{ inputs.idp }}
         TF_VAR_self_registration: ${{ inputs.self_registration }}
         TF_VAR_allowed_domains: ${{ inputs.allowed_domains }}

@@ -97,6 +97,21 @@ jobs:
     login_position: "CENTER"
 ```
 
+**Option 3: Full branding customization (colors, position, theme)**
+
+```yaml
+- uses: your-org/actions-aws-auth-audit@main
+  with:
+    name: branded-auth-custom
+    enable_managed_login_branding: true
+    login_position: "END"
+    form_vertical_position: "CENTER"
+    primary_color: "2563eb"
+    primary_color_hover: "1d4ed8"
+    form_border_radius: "12"
+    color_scheme_mode: "LIGHT"
+```
+
 ## Inputs
 
 | Input | Description | Required | Default |
@@ -106,6 +121,11 @@ jobs:
 | `logout_urls` | Comma-separated list of logout URLs for OAuth | ❌ No | `https://example.com` |
 | `enable_managed_login_branding` | Enable managed login branding for custom UI | ❌ No | `false` |
 | `login_position` | Login form horizontal position: START, CENTER, or END | ❌ No | `CENTER` |
+| `form_vertical_position` | Login form vertical position: TOP, CENTER, or BOTTOM | ❌ No | `CENTER` |
+| `primary_color` | Primary branding color (6-digit hex without #, e.g. 0972d3) | ❌ No | `0972d3` |
+| `primary_color_hover` | Hover state color for primary elements (6-digit hex) | ❌ No | `033160` |
+| `form_border_radius` | Border radius for form container and inputs (pixels) | ❌ No | `8` |
+| `color_scheme_mode` | Display mode: LIGHT, DARK, or ADAPTIVE | ❌ No | `LIGHT` |
 | `action` | Desired outcome: `apply`, `plan`, or `destroy` | ❌ No | `apply` |
 | `enable_google_identity_provider` | Enable Google identity provider for Cognito User Pool | ❌ No | `false` |
 | `google_client_id` | Google OAuth 2.0 client ID (required when enable_google_identity_provider is true) | ❌ No | `""` |
@@ -180,7 +200,7 @@ When Google identity provider is enabled:
 > - `assets/logo/` → FORM_LOGO (PNG, JPG, JPEG, SVG files)
 > 
 > Any filename is supported in each directory. The action will gracefully handle missing directories without errors.
-> The `login_position` parameter only works when `enable_managed_login_branding` is true.
+> The `login_position`, `form_vertical_position`, `primary_color`, `form_border_radius`, and `color_scheme_mode` parameters only work when `enable_managed_login_branding` is true.
 
 ## Outputs
 

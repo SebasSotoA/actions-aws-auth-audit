@@ -29,8 +29,16 @@ locals {
   logout_urls   = split(",", var.logout_urls)
   
   # Generate branding settings using templatefile for clean configuration
+  # Primary color: AWS uses 8-digit hex (AARRGGBB). We append "ff" for full opacity.
+  primary_color_hex     = "${replace(var.primary_color, "#", "")}ff"
+  primary_color_hover_hex = "${replace(var.primary_color_hover, "#", "")}ff"
   branding_settings_json = var.enable_managed_login_branding ? templatefile("${path.module}/config/branding-settings.json.tftpl", {
-    horizontal_position = var.login_position
+    horizontal_position     = var.login_position
+    vertical_position      = var.form_vertical_position
+    primary_color         = local.primary_color_hex
+    primary_color_hover   = local.primary_color_hover_hex
+    form_border_radius    = var.form_border_radius
+    color_scheme_mode     = var.color_scheme_mode
   }) : null
   
   # Helper function to extract and normalize file extension
