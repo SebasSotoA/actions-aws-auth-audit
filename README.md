@@ -18,7 +18,7 @@ A GitHub Action that provisions AWS Cognito User Pools for authentication using 
 ## Quick Start
 
 ```yaml
-- uses: alonch/actions-aws-auth@main
+- uses: your-org/actions-aws-auth-audit@main
   with:
     name: my-app-auth
 ```
@@ -53,7 +53,7 @@ jobs:
         with:
           instance: my-app
       
-      - uses: alonch/actions-aws-auth@main
+      - uses: your-org/actions-aws-auth-audit@main
         with:
           name: my-app-auth
           callback_urls: "https://myapp.com/callback,https://myapp.com/auth"
@@ -63,7 +63,7 @@ jobs:
 ### Advanced Example
 
 ```yaml
-- uses: alonch/actions-aws-auth@main
+- uses: your-org/actions-aws-auth-audit@main
   with:
     name: production-auth
     callback_urls: "https://app.example.com/auth/callback,https://admin.example.com/callback"
@@ -76,7 +76,7 @@ jobs:
 **Option 1: Using automatic branding with custom login position**
 
 ```yaml
-- uses: alonch/actions-aws-auth@main
+- uses: your-org/actions-aws-auth-audit@main
   with:
     name: branded-auth
     callback_urls: "https://app.example.com/auth/callback,https://admin.example.com/callback"
@@ -88,7 +88,7 @@ jobs:
 **Option 2: Using default center position (recommended)**
 
 ```yaml
-- uses: alonch/actions-aws-auth@main
+- uses: your-org/actions-aws-auth-audit@main
   with:
     name: branded-auth-file
     callback_urls: "https://app.example.com/auth/callback,https://admin.example.com/callback"
@@ -134,7 +134,7 @@ Before enabling Google identity provider, you need to set up OAuth 2.0 credentia
 ### Usage Example
 
 ```yaml
-- uses: alonch/actions-aws-auth@main
+- uses: your-org/actions-aws-auth-audit@main
   with:
     name: my-app-auth
     callback_urls: "https://myapp.com/auth/callback"
@@ -240,7 +240,7 @@ aws cognito-idp add-custom-attributes \
 
 ```yaml
 - name: Deploy app with auth config
-  uses: alonch/actions-aws-auth@main
+  uses: your-org/actions-aws-auth-audit@main
   id: auth
   with:
     name: my-app-auth
@@ -307,7 +307,7 @@ jobs:
         with:
           instance: my-app
       
-      - uses: alonch/actions-aws-auth@main
+      - uses: your-org/actions-aws-auth-audit@main
         with:
           name: webapp-auth
           callback_urls: "https://myapp.com/auth/callback"
@@ -345,7 +345,7 @@ jobs:
         with:
           instance: my-app
       
-      - uses: alonch/actions-aws-auth@main
+      - uses: your-org/actions-aws-auth-audit@main
         with:
           name: auto-branded-auth
           callback_urls: "https://mycompany.com/auth/callback"
@@ -431,7 +431,7 @@ jobs:
         with:
           instance: my-app
       
-      - uses: alonch/actions-aws-auth@main
+      - uses: your-org/actions-aws-auth-audit@main
         with:
           name: google-auth
           callback_urls: "https://myapp.com/auth/callback"
@@ -479,7 +479,7 @@ jobs:
         with:
           instance: my-app
       
-      - uses: alonch/actions-aws-auth@main
+      - uses: your-org/actions-aws-auth-audit@main
         id: auth
         with:
           name: file-based-branded-auth
@@ -649,7 +649,7 @@ AWS Cognito Managed Login provides advanced customization options for your authe
 3. **Configure the action**:
 
 ```yaml
-- uses: alonch/actions-aws-auth@main
+- uses: your-org/actions-aws-auth-audit@main
   with:
     name: branded-auth
     enable_managed_login_branding: true

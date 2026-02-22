@@ -1,6 +1,6 @@
 name: "AWS Cognito Auth"
 description: "Provision AWS Cognito User Pool for authentication using Terraform with customizable branding assets"
-author: "alonch"
+author: ""
 branding:
   icon: "shield"
   color: "blue"
