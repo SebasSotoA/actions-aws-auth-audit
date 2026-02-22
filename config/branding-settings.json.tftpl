@@ -28,12 +28,12 @@
       },
       "location": {
         "horizontal": "${horizontal_position}",
-        "vertical": "CENTER"
+        "vertical": "${vertical_position}"
       },
       "sessionTimerDisplay": "NONE"
     },
     "global": {
-      "colorSchemeMode": "LIGHT",
+      "colorSchemeMode": "${color_scheme_mode}",
       "pageFooter": {
         "enabled": false
       },
@@ -53,7 +53,7 @@
   },
   "componentClasses": {
     "buttons": {
-      "borderRadius": 8
+      "borderRadius": ${form_border_radius}
     },
     "divider": {
       "darkMode": {
@@ -64,7 +64,7 @@
       }
     },
     "dropDown": {
-      "borderRadius": 8,
+      "borderRadius": ${form_border_radius},
       "darkMode": {
         "defaults": {
           "itemBackgroundColor": "192534ff"
@@ -90,7 +90,7 @@
         },
         "match": {
           "itemBackgroundColor": "414d5cff",
-          "itemTextColor": "0972d3ff"
+          "itemTextColor": "${primary_color}"
         }
       }
     },
@@ -99,7 +99,7 @@
         "borderColor": "539fe5ff"
       },
       "lightMode": {
-        "borderColor": "0972d3ff"
+        "borderColor": "${primary_color}"
       }
     },
     "idpButtons": {
@@ -108,7 +108,7 @@
       }
     },
     "input": {
-      "borderRadius": 8,
+      "borderRadius": ${form_border_radius},
       "darkMode": {
         "defaults": {
           "backgroundColor": "0f1b2aff",
@@ -151,10 +151,10 @@
       },
       "lightMode": {
         "defaults": {
-          "textColor": "0972d3ff"
+          "textColor": "${primary_color}"
         },
         "hover": {
-          "textColor": "033160ff"
+          "textColor": "${primary_color_hover}"
         }
       }
     },
@@ -175,7 +175,7 @@
           "borderColor": "7d8998ff"
         },
         "selected": {
-          "backgroundColor": "0972d3ff",
+          "backgroundColor": "${primary_color}",
           "foregroundColor": "ffffffff"
         }
       }
@@ -248,7 +248,7 @@
       "backgroundImage": {
         "enabled": false
       },
-      "borderRadius": 8,
+      "borderRadius": ${form_border_radius},
       "darkMode": {
         "backgroundColor": "0f1b2aff",
         "borderColor": "424650ff"
@@ -392,11 +392,11 @@
       },
       "lightMode": {
         "active": {
-          "backgroundColor": "033160ff",
+          "backgroundColor": "${primary_color_hover}",
           "textColor": "ffffffff"
         },
         "defaults": {
-          "backgroundColor": "0972d3ff",
+          "backgroundColor": "${primary_color}",
           "textColor": "ffffffff"
         },
         "disabled": {
@@ -404,7 +404,7 @@
           "borderColor": "ffffffff"
         },
         "hover": {
-          "backgroundColor": "033160ff",
+          "backgroundColor": "${primary_color_hover}",
           "textColor": "ffffffff"
         }
       }
@@ -430,18 +430,18 @@
       "lightMode": {
         "active": {
           "backgroundColor": "d3e7f9ff",
-          "borderColor": "033160ff",
-          "textColor": "033160ff"
+          "borderColor": "${primary_color_hover}",
+          "textColor": "${primary_color_hover}"
         },
         "defaults": {
           "backgroundColor": "ffffffff",
-          "borderColor": "0972d3ff",
-          "textColor": "0972d3ff"
+          "borderColor": "${primary_color}",
+          "textColor": "${primary_color}"
         },
         "hover": {
           "backgroundColor": "f2f8fdff",
-          "borderColor": "033160ff",
-          "textColor": "033160ff"
+          "borderColor": "${primary_color_hover}",
+          "textColor": "${primary_color_hover}"
         }
       }
     }
