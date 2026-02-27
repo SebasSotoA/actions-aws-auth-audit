@@ -337,6 +337,19 @@ resource "aws_cognito_user_pool" "this" {
   }
 
   schema {
+    name                     = "organizationId"
+    attribute_data_type      = "String"
+    mutable                  = true
+    required                 = false
+    developer_only_attribute = false
+    
+    string_attribute_constraints {
+      min_length = 0
+      max_length = 2048
+    }
+  }
+
+  schema {
     name                     = "userRole"
     attribute_data_type      = "String"
     mutable                  = true
