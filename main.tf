@@ -414,9 +414,9 @@ resource "aws_cognito_user_pool" "this" {
     Name = local.user_pool_name
   }
 
-  lifecycle {
-    ignore_changes = [schema]
-  }
+#  lifecycle {
+#    ignore_changes = [schema]
+#  }
 }
 
 # Create Google Identity Provider (only if enabled)
