@@ -93,6 +93,10 @@ inputs:
     description: 'List of permissions following Github standard of service: read or write. In YML format (e.g., "s3: write\ndynamodb: read")'
     required: false
     default: ""
+  force_apply:
+    description: "Force terraform apply even if no assets or configuration changes are detected"
+    required: false
+    default: "false"
 
 outputs:
   user_pool_id:
@@ -340,7 +344,7 @@ runs:
 
     - name: Terraform apply
       id: terraform
-      if: inputs.action == 'apply' && (inputs.enable_managed_login_branding != 'true' || steps.check_assets.outputs.assets_changed == 'true' || steps.check_input_config.outputs.input_config_changed == 'true')
+      if: inputs.action == 'apply' && (inputs.force_apply == 'true' || inputs.enable_managed_login_branding != 'true' || steps.check_assets.outputs.assets_changed == 'true' || steps.check_input_config.outputs.input_config_changed == 'true')
       run: |
         # Force recreation of managed login branding if assets or workflow config have changed
         if [ "${{ inputs.enable_managed_login_branding }}" == "true" ]; then
@@ -438,7 +442,7 @@ runs:
 
     - name: Get existing outputs when apply is skipped
       id: terraform_skipped
-      if: inputs.action == 'apply' && inputs.enable_managed_login_branding == 'true' && steps.check_assets.outputs.assets_changed != 'true' && steps.check_input_config.outputs.input_config_changed != 'true'
+      if: inputs.action == 'apply' && inputs.force_apply != 'true' && inputs.enable_managed_login_branding == 'true' && steps.check_assets.outputs.assets_changed != 'true' && steps.check_input_config.outputs.input_config_changed != 'true'
       run: |
         echo "Terraform apply was skipped because no branding assets or workflow configuration changed. Getting existing outputs..."
         USER_POOL_ID=$(terraform output -raw user_pool_id | tr -d '\r\n')
